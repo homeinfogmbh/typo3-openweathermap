@@ -17,7 +17,7 @@ class DebugController extends ActionController
     {
         $repository = GeneralUtility::makeInstance(ObjectManager::class)
             ->get(WeatherRepository::class);
-        $weather = $repository->findByCity('Hannover', $since = new DateTime());
+        $weather = $repository->findByCity('Hannover', since: new DateTime());
         \TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump($weather, "Weather: ");
     }
 }
