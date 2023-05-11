@@ -24,13 +24,13 @@ class WeatherRepository
         $query = ($queryBuilder = $this->select())
             ->where(
                 $queryBuilder->expr()->eq(
-                    'city_name',
+                    'city.name',
                     $queryBuilder->createNamedParameter($name)
                 )
             )
             ->andWhere(
                 $queryBuilder->expr()->eq(
-                    'city_country',
+                    'city.country',
                     $queryBuilder->createNamedParameter($country)
                 )
             );
