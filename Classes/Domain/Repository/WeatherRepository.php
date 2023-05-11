@@ -37,7 +37,7 @@ class WeatherRepository
 
         if ($since !== null)
             $query = $query->andWhere(
-                $queryBuilder->expr()->ge(
+                $queryBuilder->expr()->gte(
                     'dt',
                     $queryBuilder->createNamedParameter($since)
                 )
