@@ -1,0 +1,52 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+    <div style="border:1px solid #fff;">
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Customer</th>
+                <th>Type</th>
+                <th>Connection</th>
+                <th>Address</th>
+                <th>LPT Address</th>
+                <th>Annotation</th>
+                <th>Testing</th>
+                <th>Created</th>
+                <th>Construction site preparation feedback</th>
+                <th>Internet connection installed</th>
+                <th>Technitian annotation</th>
+            </tr>
+            <f:for each="{deployments}" as="deployment">
+                <tr>
+                    <td>{deployment.id}</td>
+                    <td>{deployment.customer}</td>
+                    <td>{deployment.type}</td>
+                    <td>{deployment.connection}</td>
+                    <td>{deployment.address}</td>
+                    <td>
+                        <f:if condition="{deployment.lpt_address}">
+                            <f:then>{deployment.lpt_address}</f:then>
+                            <f:else>
+                                -
+                            </f:else>
+                        </f:if>
+                    </td>
+                    <td>{deployment.annotation}</td>
+                    <td>
+                        <f:if condition="{deployment.testing}">
+                            <f:then>
+                                Ja
+                            </f:then>
+                            <f:else>
+                                Nein
+                            </f:else>
+                        </f:if>
+                    </td>
+                    <td><f:format.date format="Y-M-D H:m:s">{deployment.created}</f:format.date></td>
+                    <td><f:format.date format="Y-M-D H:m:s">{deployment.construction_site_preparation_feedback}</f:format.date></td>
+                    <td><f:format.date format="Y-M-D H:m:s">{deployment.internet_connection}</f:format.date></td>
+                    <td>{deployment.technician_annotation}</td>
+                </tr>
+            </f:for>
+        </table>
+    </div>
+</html>

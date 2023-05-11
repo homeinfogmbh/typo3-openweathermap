@@ -1,0 +1,7 @@
+module.tx_openweathermap {
+    view {
+        templateRootPaths {
+            10 = EXT:openweathermap/Resources/Private/Templates/
+        }
+    }
+}
