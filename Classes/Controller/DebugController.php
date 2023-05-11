@@ -11,7 +11,7 @@ use Homeinfo\openweathermap\Domain\Repository\WeatherRepository;
 
 class DebugController extends ActionController
 {
-    public function listWeatherAction()
+    public function debugWeatherAction()
     {
         $repository = GeneralUtility::makeInstance(ObjectManager::class)
             ->get(WeatherRepository::class);
