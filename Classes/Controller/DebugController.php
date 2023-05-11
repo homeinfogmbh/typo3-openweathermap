@@ -2,6 +2,8 @@
 
 namespace Homeinfo\openweathermap\Controller;
 
+use DateTime;
+
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 use TYPO3\CMS\Extbase\Object\ObjectManager;
@@ -15,7 +17,7 @@ class DebugController extends ActionController
     {
         $repository = GeneralUtility::makeInstance(ObjectManager::class)
             ->get(WeatherRepository::class);
-        $weather = $repository->findByCity('Hannover');
+        $weather = $repository->findByCity('Hannover', $since = new DateTime());
         \TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump($weather, "Weather: ");
     }
 }
