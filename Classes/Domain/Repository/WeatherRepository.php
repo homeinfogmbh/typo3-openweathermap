@@ -39,7 +39,7 @@ class WeatherRepository
             $query = $query->andWhere(
                 $queryBuilder->expr()->gte(
                     'dt',
-                    $queryBuilder->createNamedParameter($since)
+                    $queryBuilder->createNamedParameter($since->format(DateTime::ISO8601))
                 )
             );
 
@@ -48,7 +48,7 @@ class WeatherRepository
             $query = $query->andWhere(
                 $queryBuilder->expr()->lt(
                     'dt',
-                    $queryBuilder->createNamedParameter($until)
+                    $queryBuilder->createNamedParameter($until->format(DateTime::ISO8601))
                 )
             );
 
