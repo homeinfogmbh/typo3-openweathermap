@@ -2,6 +2,8 @@
 
 namespace Homeinfo\openweathermap\Domain\Repository;
 
+use DateTime;
+
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Database\Query\QueryBuilder;
 
