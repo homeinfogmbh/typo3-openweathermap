@@ -52,7 +52,7 @@ class WeatherRepository
                 )
             );
 
-        return $query->executeQuery()->fetch();
+        return $query->executeQuery()->fetchAll();
     }
 
     private function select(): QueryBuilder
