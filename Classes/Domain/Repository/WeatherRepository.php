@@ -67,7 +67,7 @@ class WeatherRepository
                 'city.last_update as city_last_update',
             )
             ->from('forecast')
-            ->leftJoin(
+            ->join(
                 'forecast',
                 'city',
                 'city',
