@@ -17,6 +17,5 @@ class DebugController extends ActionController
             ->get(WeatherRepository::class);
         $weather = $repository->findByCity('Hannover');
         \TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump($weather, "Weather: ");
-        $this->view->assign('weather', $weather);
     }
 }
