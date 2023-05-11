@@ -5,7 +5,7 @@ namespace Homeinfo\openweathermap\Domain\Repository;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Database\Query\QueryBuilder;
 
-class DeploymentRepository
+class WeatherRepository
 {
     public function __construct(
         private readonly ConnectionPool $connectionPool
