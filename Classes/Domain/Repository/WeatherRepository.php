@@ -58,14 +58,7 @@ class WeatherRepository
     private function select(): QueryBuilder
     {
         return ($queryBuilder = $this->connectionPool->getQueryBuilderForTable('forecast'))
-            ->select(
-                'forecast.*',
-                'city.name as city_name',
-                'city.country as city_country',
-                'city.longitude as city_longitude',
-                'city.latitude as city_latitude',
-                'city.last_update as city_last_update',
-            )
+            ->select('forecast.*')
             ->from('forecast')
             ->join(
                 'forecast',
