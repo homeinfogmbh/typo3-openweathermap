@@ -58,13 +58,19 @@ class WeatherRepository
     private function select(): QueryBuilder
     {
         return ($queryBuilder = $this->connectionPool->getQueryBuilderForTable('forecast'))
-            ->select('forecast.*')
+            ->select('forecast.*', 'weather.*')
             ->from('forecast')
             ->join(
                 'forecast',
                 'city',
                 'city',
                 $queryBuilder->expr()->eq('city.id', $queryBuilder->quoteIdentifier('forecast.city'))
+            )
+            ->join(
+                'forecast',
+                'weather',
+                'weather',
+                $queryBuilder->expr()->eq('weather.forecast', $queryBuilder->quoteIdentifier('forecast.id'))
             );
     }
 }
